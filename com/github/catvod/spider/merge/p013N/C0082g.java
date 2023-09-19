@@ -1,0 +1,52 @@
+package com.github.catvod.spider.merge.p013N;
+
+import com.github.catvod.spider.merge.atm;
+import com.github.catvod.spider.merge.p016Q.C0188j;
+
+/* JADX INFO: Access modifiers changed from: package-private */
+/* renamed from: com.github.catvod.spider.merge.N.g */
+/* loaded from: classes.dex */
+public final class C0082g extends AbstractC0085j {
+
+    /* renamed from: c */
+    private final char[] f131c;
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public C0082g(int i, int i2, char[] cArr) {
+        super(i2);
+        this.f131c = cArr;
+    }
+
+    @Override // com.github.catvod.spider.merge.p013N.InterfaceC0079d
+    /* renamed from: c */
+    public final String mo1366c(C0188j c0188j) {
+        int min = Math.min(c0188j.f343a, this.f134a);
+        return new String(this.f131c, min, Math.min((c0188j.f344b - c0188j.f343a) + 1, this.f134a - min));
+    }
+
+    @Override // com.github.catvod.spider.merge.p013N.InterfaceC0093r
+    /* renamed from: h */
+    public final int mo1343h(int i) {
+        char c;
+        int signum = Integer.signum(1);
+        if (signum == -1) {
+            int i2 = this.f135b + 1;
+            if (i2 < 0) {
+                return -1;
+            }
+            c = this.f131c[i2];
+        } else if (signum == 0) {
+            return 0;
+        } else {
+            if (signum != 1) {
+                throw new UnsupportedOperationException(atm.m897d("24150E553E3D0B19121028"));
+            }
+            int i3 = (this.f135b + 1) - 1;
+            if (i3 >= this.f134a) {
+                return -1;
+            }
+            c = this.f131c[i3];
+        }
+        return c & 65535;
+    }
+}
